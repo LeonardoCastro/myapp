@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>{{.title}}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="/public/img/favicon.png">
+    <script src="/public/js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+    {{range .moreStyles}}
+      <link rel="stylesheet" type="text/css" href="/public/{{.}}">
+    {{end}}
+    {{range .moreScripts}}
+      <script src="/public/{{.}}" type="text/javascript" charset="utf-8"></script>
+    {{end}}
+  </head>
+  <body>
+
+    <div id="header" align="center">
+      <h1>login demo</h1>
+      {{if .user}}
+        <div id="options">
+          Connected as {{.user.Username}}
+          |
+          <a href="\">Index</a>
+          |
+         <!-- <a href="{{url "Application.Logout"}}">Logout</a> -->
+        </div>
+      {{end}}
+    </div>
+
+    <div id="content">
+      {{if .flash.error}}
+        <p class="fError">
+          <strong>{{.flash.error}}</strong>
+        </p>
+      {{end}}
+      {{if .flash.success}}
+        <p class="fSuccess">
+          <strong>{{.flash.success}}</strong>
+        </p>
+      {{end}}

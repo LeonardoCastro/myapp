@@ -1,0 +1,72 @@
+{{set . "title" "Home"}}
+{{template "header.html" .}}
+
+<header class="hero-unit" style="background-color:#A9F16C">
+  <div class="container">
+    <div class="row">
+      <div class="hero-text">
+        <h1>{{.greeting}}</h1>
+        <p></p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="span6">
+      {{template "flash.html" .}}
+    </div>
+  </div>
+</div>
+
+<form action="{{url "App.Login"}}" id="formLogin" method="POST">
+  <fieldset style="margin-left:24px">
+    <legend>Login</legend>
+    <p class="field">
+      <label>Username:</label>
+      <input type="text" name="username" size="19" value="{{.flash.username}}" />
+    </p>
+    <p class="field">
+      <label>Password:</label>
+      <input type="password" name="password" size="19"/>
+    </p>
+    <p class="field">
+      <label>Remember:</label>
+      <input type="checkbox" name="remember" value="true"/>
+    </p>
+    <p class="buttons">
+      <input type="submit" value="let's go!" />
+    </p>
+  </fieldset>
+</form>
+
+<p>
+  <a href="{{url "App.Register"}}" style="margin-left:23px">New user? Register now!</a>
+</p>
+
+<!-- <form action="/App/Hello" method="GET">
+    <input type="text" name="myName" /><br/>
+    <input type="submit" value="Say hello!" />
+</form> -->
+
+<!-- <form action="/App/SaveUser" method="get">
+  <fieldset style="margin-left:24px">
+    <legend>Personal information</legend>
+      Username:<br/>
+      {{with $field := field "username" .}}
+        <input type="text" name="{{$field.Name}}" value="{{$field.Flash}}"/><br/>
+      {{end}}
+      Email:<br/>
+      {{with $field := field "email" .}}
+        <input type="text" name="{{$field.Name}}" value="{{$field.Flash}}"/><br/>
+        {{end}}
+      Password:<br/>
+      <input type="password" name="pwd"/><br/>
+      Confirm password:<br/>
+      <input type="password" name="pwdConf"/><br/>
+      <input type="submit" value="Register"/>
+    </fieldset>
+</form> -->
+
+{{template "footer.html" .}}
