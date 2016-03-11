@@ -50,9 +50,9 @@ func (c App) Login(username, password string, remember bool) revel.Result {
 		if err == nil {
 			c.Session["user"] = username
 			if remember {
-				c.Session.SetDefaultExpiration()
-			} else {
 				c.Session.SetNoExpiration()
+			} else {
+				c.Session.SetDefaultExpiration()
 			}
 			return c.Render(username)
 		}

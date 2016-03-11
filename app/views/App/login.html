@@ -1,7 +1,48 @@
 {{set . "title" "Home"}}
 {{template "header.html" .}}
 
-<h1>Greetings {{.username}}, you're now logged in.</h1>
-<a href="/">Back to form</a>
+<h1 style="margin-left:24px">Greetings {{.username}}, you're now logged in.</h1>
+
+<iframe width="560" height="315" style="margin-left:50px" src="https://www.youtube.com/embed/yzGzB-yYKcc" frameborder="0"
+allowfullscreen></iframe>
+
+
+
+<br><p style="margin-left:40px; margin-right:100px"> The <a href="https://en.wikipedia.org/wiki/Blowfish_(cipher)">
+  Blowfish algorithm</a> is the base for secure passwords from online
+  and offline attacks.</p>
+
+<p style="margin-left:40px; margin-right:100px"> An <i>online</i> attack is done when somebody tries to authenticate your
+  password using each guess of it.</p>
+
+<p style="margin-left:40px; margin-right:100px"> On <i>offline</i> attacks, the attacker gets an information (such as a number
+  or a letter) of your password, allowing him to check password's guesses without any authentication system.</p>
+
+<h5 style="margin-left:24px">The idea of the <b>Blowfish algorithm</b> is to make very difficult to any attacker to guess
+  <i>any</i> part of your password.</h5>
+<p style="margin-left:40px; margin-right:100px"> <b>As an example:</b> If the user was born on 1968, the probability that the number "68" is on the password is high.
+    On the same way, the probability of having "68" as the two last characters of the password is even higher. Having those two
+    knowledges, an attacker possibilities to hack your password will be increasing.</p>
+<p style="margin-left:40px; margin-right:100px"> Many web pages (including banks) demands passwords with 8 character, at least one number and an upper-case letter.
+    So, if your name is José and you were born on 1968, a horrible, horrible password would be "John1968".</p>
+
+<h4 style="margin-left:24px"> Upgrading "John1968"</h4>
+
+<p style="margin-left:40px; margin-right:100px"> The idea of a safe password (no matter the length) is not leaving traces of
+  personal information. Also, as Edward Snowden said on the video showed, we need to migrate from a pass<i>word</i> to a
+  pass<i>frase</i>.</p>
+
+<p style="margin-left:40px; margin-right:100px"> Following the José example, passing from "John1968" to
+  "MyNameIsJohnAndIWasBornOn1968" makes an attacker more difficult to enter into your accounts. The increase of length,
+  from 8 characters to 29 characters is an important element to make a safer web account. Also, elements like having several
+  upper-case letters after the first character makes it stronger. On the other hand, we remain having "1968" at the end of
+  it.</p>
+
+<p style="margin-left:40px; margin-right:100px">
+
+
+
+
+<a style="margin-left:15px" href="/">Back to form</a>
 
 {{template "footer.html" .}}
