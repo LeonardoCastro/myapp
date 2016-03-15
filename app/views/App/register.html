@@ -10,19 +10,20 @@
       <span class="error">{{$field.Error}}</span>
     </p>
   {{end}}
-  {{with $field := field "user.Password" .}}
 
+  {{with $field := field "user.Password" .}}
     <p class="{{$field.ErrorClass}}">
-      <div class="password-strength">
+      <!-- <div class="password-strength">
         <div class="password-strength-text" aria-live="assertive">Not very secure</div>
         <div class="password-strength-title">Password strength:</div>
         <div class="password-indicator">
         <div class="indicator" style="width: 0%;"></div>
-      </div>
+      </div> -->
       <strong>Password:</strong> <input type="password" name="{{$field.Name}}" size="16" value="{{$field.Flash}}">
       <span class="error">{{$field.Error}}</span>
     </p>
   {{end}}
+
   {{with $field := field "verifyPassword" .}}
     <p class="{{$field.ErrorClass}}">
       <strong>Verify password:</strong> <input type="password" name="{{$field.Name}}" size="16" value="{{$field.Flash}}">

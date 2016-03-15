@@ -1,4 +1,4 @@
-{{set . "title" "Home"}}
+{{set . "title" "Login"}}
 {{template "header.html" .}}
 
 <h1 style="margin-left:24px">Greetings {{.username}}, you're now logged in.</h1>
@@ -8,40 +8,65 @@ allowfullscreen></iframe>
 
 
 
-<br><p style="margin-left:40px; margin-right:100px"> The <a href="https://en.wikipedia.org/wiki/Blowfish_(cipher)">
+<p style="margin-left:40px; margin-right:100px"> The <a href="https://en.wikipedia.org/wiki/Blowfish_(cipher)">
   Blowfish algorithm</a> is the base for secure passwords from online
-  and offline attacks.</p>
-
-<p style="margin-left:40px; margin-right:100px"> An <i>online</i> attack is done when somebody tries to authenticate your
-  password using each guess of it.</p>
-
-<p style="margin-left:40px; margin-right:100px"> On <i>offline</i> attacks, the attacker gets an information (such as a number
+  and offline attacks.<br/>
+  An <i>online</i> attack is done when somebody tries to authenticate your
+  password using each guess of it.<br/>
+  On <i>offline</i> attacks, the attacker gets an information (such as a number
   or a letter) of your password, allowing him to check password's guesses without any authentication system.</p>
 
 <h5 style="margin-left:24px">The idea of the <b>Blowfish algorithm</b> is to make very difficult to any attacker to guess
   <i>any</i> part of your password.</h5>
-<p style="margin-left:40px; margin-right:100px"> <b>As an example:</b> If the user was born on 1968, the probability that the number "68" is on the password is high.
-    On the same way, the probability of having "68" as the two last characters of the password is even higher. Having those two
-    knowledges, an attacker possibilities to hack your password will be increasing.</p>
-<p style="margin-left:40px; margin-right:100px"> Many web pages (including banks) demands passwords with 8 character, at least one number and an upper-case letter.
-    So, if your name is José and you were born on 1968, a horrible, horrible password would be "John1968".</p>
+<p style="margin-left:40px; margin-right:100px"> <b>As an example:</b> If the user was born on 1968, the probability that the
+  number "68" is on the password is high. On the same way, the probability of having "68" as the two last characters of the
+  password is even higher. Having those two knowledges, an attacker possibilities to hack your password will be increasing.</p>
+<p style="margin-left:40px; margin-right:100px"> Many web pages (including banks) demands passwords with 8 character, at least
+  one number and an upper-case letter. So, if your name is John and you were born on 1968, a horrible, horrible password would
+  be "John1968".</p>
 
 <h4 style="margin-left:24px"> Upgrading "John1968"</h4>
 
 <p style="margin-left:40px; margin-right:100px"> The idea of a safe password (no matter the length) is not leaving traces of
   personal information. Also, as Edward Snowden said on the video showed, we need to migrate from a pass<i>word</i> to a
-  pass<i>frase</i>.</p>
+  pass<i>phrase</i>.</p>
 
-<p style="margin-left:40px; margin-right:100px"> Following the José example, passing from "John1968" to
+<p style="margin-left:40px; margin-right:100px"> Following the John example, passing from "John1968" to
   "MyNameIsJohnAndIWasBornOn1968" makes an attacker more difficult to enter into your accounts. The increase of length,
   from 8 characters to 29 characters is an important element to make a safer web account. Also, elements like having several
   upper-case letters after the first character makes it stronger. On the other hand, we remain having "1968" at the end of
   it.</p>
 
-<p style="margin-left:40px; margin-right:100px">
+<p style="margin-left:40px; margin-right:100px"> A good idea would be then to <i>distort</i> the passphrase until we have got
+  something useful. <br/>
+  Let's take "MyNameIsJohnAndIWasBornOn1968". The two things we need to transform is the word "John" and "1968".<br/>
+  Taking numbers as letters can be useful. Thus, we can set a "1" as an "I", or an "8" as a "b". deleting upper-case "J"
+  may be a good idea, as the upper-case case letter of our first name can be very current in our thinking. We can maybe
+  use "9" or "6" as the replacement of "J"<br/>
+  The result could be "MyName1s9o6nAndIWas8orn0n". This seems way more undescifrable in comparison to the last one. The
+  problem is that we still have some words which can be descifred, such as "MyName" or "AndIWas".<br/>
+  Of course, if the authentication system allows it, we could also use symbols like "&" or "?". We can then use them to have
+  a more complicated phrase. Using "&" as "And", "?" as "Name" and "$" as "Was" we obtain<br/> <b>"My?1s9o6n&I$8orn0n"</b>. <br/>
+  We now have a passphrase which you can read (because you know what it means) and does not have explicit information
+  about John.<br/>
+ </p>
 
+ <h4 style="margin-left:24px"> The algorithm</h4>
 
+ <p style="margin-left:40px; margin-right:100px">
+   The idea is not that difficult, we need a simple phrase you can always remember and distorting it with other words or numbers
+   which can be on or even out of that phrase.<br/>
+   The little game placed just below can help you to do new passphrases with a desired length. Of course, The algorithm used here
+   is not that creative as human mind can be. So, you may take the recomended passphrase as a base to customize your password.
+ </p>
 
+<fieldset  style="margin-left:50px">
+  <form action="{{url "App.Password"}}" method="POST">
+    <p class="buttons" >
+      <input type="submit" value="let's go!" />
+    </p>
+  </form>
+</fieldset>
 
 <a style="margin-left:15px" href="/">Back to form</a>
 

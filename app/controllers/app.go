@@ -132,3 +132,14 @@ func (c App) Hello(myName string) revel.Result {
 	}
 	return c.Render(myName)
 }
+
+// Password renders to the search tool
+func (c App) Password() revel.Result {
+	return c.Render()
+}
+
+// FindPassphrase returns Passphrase
+func (c App) FindPassphrase(p models.Passphrase) revel.Result {
+	pssph := p.FindPassword()
+	return c.Render(pssph)
+}
