@@ -135,11 +135,13 @@ func (c App) Hello(myName string) revel.Result {
 
 // Password renders to the search tool
 func (c App) Password() revel.Result {
-	return c.Render()
+	//"MyNameIsJohnAndIWasBornOn1968", "John", "1968"
+	p := models.Passphrase{}
+	return c.Render(p)
 }
 
 // FindPassphrase returns Passphrase
-func (c App) FindPassphrase(p models.Passphrase) revel.Result {
-	pssph := p.FindPassword()
-	return c.Render(pssph)
+func (c App) Result(p *models.Passphrase) revel.Result {
+	pssphrase := p.FindPassword()
+	return c.Render(pssphrase)
 }

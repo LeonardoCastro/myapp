@@ -32,7 +32,6 @@ type Passphrase struct {
 	Phrase        string
 	PersonalInfo1 string
 	PersonalInfo2 string
-	Passphrase    string
 }
 
 // // Password renders to the search tool
@@ -79,7 +78,7 @@ func (p *Passphrase) FindPassword() string {
 	var array []int
 
 	for i := range copiaS2 {
-		array = append(array, -i/i)
+		array = append(array, -(i+1)/(i+1))
 	}
 
 	for i, p := range copiaPassword {
@@ -127,7 +126,7 @@ func (p *Passphrase) FindPassword() string {
 			if err != nil {
 				fmt.Println(err)
 			}
-			copiaPassword[i] = copiaS2[1]
+			copiaPassword[i] = copiaS2[0]
 			array[mapS2[copiaS2[0]]] = i
 			set = true
 		}
@@ -168,37 +167,39 @@ func (p *Passphrase) FindPassword() string {
 	}
 
 	return strings.Join(copiaPassword, "")
-	//	if idx := strings.Index(password, s1); idx >
-
-	//	idx1 := strings.Index(password, s2)
-
-	//switch len1 := len(Idx1) {
-	//case len1 == 0:
-	//	switch len2 := len(Idx2) {
-	//	case len2 == 0:
-	//		fmt.Println("todos los números están colocados")
-	//	case len2 > 0:
-	//		idx := strings.Index(password, s1)
-	//		for set == false {
-	//			i := rand.Int63n(CountingZeros(array, 0, Idx2[0]))
-
-	//		for i := 0; i < CountingZeros(array, 0, Idx2[0]); i ++ {
-	//		if idx < Idx2[0] {
-	//			if idx+1 > CountingZeros(array, 0, Idx2[0]) {
-
-	//	}
-	//case len1 > 0:
-	//	switch len2 := len(Idx2) {
-	//	case len2 == 0:
-
-	//	case len2 > 0 && len1 == len2:
-
-	//	case len2 > 0 && len1 > len2:
-
-	//	case len2 > 0 && len2 > len1:
-
-	//	}
 }
+
+//	if idx := strings.Index(password, s1); idx >
+
+//	idx1 := strings.Index(password, s2)
+
+//switch len1 := len(Idx1) {
+//case len1 == 0:
+//	switch len2 := len(Idx2) {
+//	case len2 == 0:
+//		fmt.Println("todos los números están colocados")
+//	case len2 > 0:
+//		idx := strings.Index(password, s1)
+//		for set == false {
+//			i := rand.Int63n(CountingZeros(array, 0, Idx2[0]))
+
+//		for i := 0; i < CountingZeros(array, 0, Idx2[0]); i ++ {
+//		if idx < Idx2[0] {
+//			if idx+1 > CountingZeros(array, 0, Idx2[0]) {
+
+//	}
+//case len1 > 0:
+//	switch len2 := len(Idx2) {
+//	case len2 == 0:
+
+//	case len2 > 0 && len1 == len2:
+
+//	case len2 > 0 && len1 > len2:
+
+//	case len2 > 0 && len2 > len1:
+
+//	}
+//}
 
 //	A := strings.Split(password, "")
 //	for i, a := range(A[idx:]) {
