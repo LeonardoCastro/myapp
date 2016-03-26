@@ -1,8 +1,7 @@
-# Welcome to Revel
+# Passphrase Generator app
 
-## Getting Started
+This repository is the fist app I make using [Go language](http://www.golang.org/).
 
-A high-productivity web framework for the [Go language](http://www.golang.org/).
 
 ### Start the web server:
 
@@ -13,6 +12,12 @@ A high-productivity web framework for the [Go language](http://www.golang.org/).
 ### Go to http://localhost:9000/ and you'll see:
 
 "It works"
+
+### The passphrase generator
+
+The objective of this app is to generate a safe passphrase from the user selected common phrase, such as **"MyNameIsJohnAndIWasBornOn1968"**.
+
+The algorithm can be reviewed at this other [repository](https://github.com/LeonardoCastro/MyFirstGoCodes/tree/master/password). **No personal information nor generated passphrases are beheld.**
 
 ### Description of Contents
 
@@ -61,15 +66,6 @@ test
 
     Tests are kept in the tests directory. Revel provides a testing framework that makes it easy to write and run functional tests against your application.
 
-### Follow the guidelines to start developing your application:
+## Revel
 
-* The README file created within your application.
-* The [Getting Started with Revel](http://revel.github.io/tutorial/index.html).
-* The [Revel guides](http://revel.github.io/manual/index.html).
-* The [Revel sample apps](http://revel.github.io/samples/index.html).
-* The [API documentation](http://revel.github.io/docs/godoc/index.html).
-
-## Contributing
-We encourage you to contribute to Revel! Please check out the [Contributing to Revel
-guide](https://github.com/revel/revel/blob/master/CONTRIBUTING.md) for guidelines about how
-to proceed. [Join us](https://groups.google.com/forum/#!forum/revel-framework)!
+This appe was made using [Revel](revel.github.io).
