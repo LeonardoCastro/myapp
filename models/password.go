@@ -46,7 +46,7 @@ type Passphrase struct {
 // }
 
 // FindPassword method to found safe passwords
-func (p *Passphrase) FindPassword() string {
+func (p Passphrase) FindPassword() string {
 
 	seed := time.Now().UTC().UnixNano()
 	rand.Seed(seed)

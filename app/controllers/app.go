@@ -1,10 +1,13 @@
 package controllers
 
 import (
+	//"fmt"
+	"github.com/LeonardoCastro/MyFirstGoCodes/password/src"
 	"github.com/LeonardoCastro/myapp/models"
 	"github.com/revel/revel"
 	"golang.org/x/crypto/bcrypt"
 	"regexp"
+	"strconv"
 )
 
 // App revel.controller + sqlx.transaction
@@ -136,12 +139,17 @@ func (c App) Hello(myName string) revel.Result {
 // Password renders to the search tool
 func (c App) Password() revel.Result {
 	//"MyNameIsJohnAndIWasBornOn1968", "John", "1968"
-	p := models.Passphrase{}
+	p := password.Passphrase{}
 	return c.Render(p)
 }
 
-// FindPassphrase returns Passphrase
-func (c App) Result(p *models.Passphrase) revel.Result {
-	pssphrase := p.FindPassword()
+// Result returns Passphrase
+func (c App) Result(p password.Passphrase, length string) revel.Result {
+	m, err := strconv.Atoi(length)
+	if err != nil {
+		pssphrase := err
+		return c.Render(pssphrase, m)
+	}
+	pssphrase := password.CompareLengths(p, m)
 	return c.Render(pssphrase)
 }
